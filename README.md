@@ -1,4 +1,4 @@
-# Project Title
+# Biblia: Pocket Bookshelf
 
 Biblia is a simple application for searching for book titles through the Google Books API and adding them to your online bookshelf.
 
