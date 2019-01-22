@@ -7,3 +7,5 @@ class Book {
     this.isbn = isbn;
   }
 }
+
+module.exports = Book;
