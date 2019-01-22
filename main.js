@@ -1,8 +1,9 @@
 const UI = require("./js/ui");
 const Book = require("./js/Book");
+const search = require("./js/search");
 
 // Event: Display Books
-document.addEventListener("DOMContentLoaded", UI.sayHi);
+document.addEventListener("DOMContentLoaded", UI.displayBooks);
 // Event: Add a book
 document.querySelector("#book-form").addEventListener("submit", e => {
   // Get Form Values
@@ -16,6 +17,9 @@ document.querySelector("#book-form").addEventListener("submit", e => {
   if (title === "" || author === "" || isbn === "") {
     console.log("Please fill in all fields", "danger");
   } else {
+    // Perform google books search
+    gbooks = search.fetchBooks(title);
+    console.log(gbooks);
     // Instantiate book
     const book = new Book(title, author, isbn);
 

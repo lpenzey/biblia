@@ -1,5 +1,7 @@
 const UI = {
-  saiHi: console.log("hi"),
+  displayBooks() {
+    console.log("Here are the books");
+  },
   clearFields() {
     document.querySelector("#title").value = "";
     document.querySelector("#author").value = "";
