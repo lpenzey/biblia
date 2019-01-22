@@ -1,4 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+},{}],2:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -184,7 +186,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 (function (process){
 if (process.env.NOD_ENV === "production") {
   module.exports = require("./keys_prod");
@@ -193,19 +195,14 @@ if (process.env.NOD_ENV === "production") {
 }
 
 }).call(this,require('_process'))
-},{"./keys_dev":3,"./keys_prod":4,"_process":1}],3:[function(require,module,exports){
-module.exports = {
-  googleBooksApiKey: "AIzaSyAXjzHcEwtxM0HVEjzGNOsD5SEJIHupNeo"
-};
-
-},{}],4:[function(require,module,exports){
+},{"./keys_dev":1,"./keys_prod":4,"_process":2}],4:[function(require,module,exports){
 (function (process){
 module.exports = {
   googleBooksApiKey: process.env.GOOGLE_BOOKS_API_KEY
 };
 
 }).call(this,require('_process'))
-},{"_process":1}],5:[function(require,module,exports){
+},{"_process":2}],5:[function(require,module,exports){
 // Book Class: Represents a book
 
 class Book {
@@ -223,26 +220,36 @@ module.exports = Book;
 const axios = require("axios");
 const googleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=";
 const keys = require("../config/keys");
+const Book = require("./Book");
 
 const search = {
   fetchBooks: term =>
     axios
       .get(googleBooksUrl + term + "&key=" + keys.googleBooksApiKey)
-      .then(response => response.data.items)
+      .then(response => {
+        const newLocal = [];
+        const books = newLocal;
+        for (i = 0; i < response.data.items.length; i++) {
+          const title = response.data.items[i].volumeInfo.title;
+          const authors = response.data.items[i].volumeInfo.authors;
+          const isbn = "123456789";
+          const book = new Book(title, authors, isbn);
+          books.push(book);
+        }
+        return books;
+      })
       .catch(err => "error")
 };
 
 module.exports = search;
 
-},{"../config/keys":2,"axios":9}],7:[function(require,module,exports){
+},{"../config/keys":3,"./Book":5,"axios":9}],7:[function(require,module,exports){
 const UI = {
   displayBooks() {
     console.log("Here are the books");
   },
   clearFields() {
     document.querySelector("#title").value = "";
-    document.querySelector("#author").value = "";
-    document.querySelector("#isbn").value = "";
   }
 };
 
@@ -261,22 +268,17 @@ document.querySelector("#book-form").addEventListener("submit", e => {
   // Prevent default
   e.preventDefault();
   const title = document.querySelector("#title").value;
-  const author = document.querySelector("#author").value;
-  const isbn = document.querySelector("#isbn").value;
 
   // Validate
-  if (title === "" || author === "" || isbn === "") {
+  if (title === "") {
     console.log("Please fill in all fields", "danger");
   } else {
     // Perform google books search
     gbooks = search.fetchBooks(title);
     console.log(gbooks);
     // Instantiate book
-    const book = new Book(title, author, isbn);
 
     // Add book to UI
-    console.log(book);
-
     // Add book to store
     // Store.addBook(book);
 
@@ -474,7 +476,7 @@ module.exports = function xhrAdapter(config) {
 };
 
 }).call(this,require('_process'))
-},{"../core/createError":17,"./../core/settle":20,"./../helpers/btoa":24,"./../helpers/buildURL":25,"./../helpers/cookies":27,"./../helpers/isURLSameOrigin":29,"./../helpers/parseHeaders":31,"./../utils":33,"_process":1}],11:[function(require,module,exports){
+},{"../core/createError":17,"./../core/settle":20,"./../helpers/btoa":24,"./../helpers/buildURL":25,"./../helpers/cookies":27,"./../helpers/isURLSameOrigin":29,"./../helpers/parseHeaders":31,"./../utils":33,"_process":2}],11:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -1031,7 +1033,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 }).call(this,require('_process'))
-},{"./adapters/http":10,"./adapters/xhr":10,"./helpers/normalizeHeaderName":30,"./utils":33,"_process":1}],23:[function(require,module,exports){
+},{"./adapters/http":10,"./adapters/xhr":10,"./helpers/normalizeHeaderName":30,"./utils":33,"_process":2}],23:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {

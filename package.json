@@ -7,6 +7,9 @@
     "url": ""
   },
   "main": "app.js",
+  "browser": {
+    "./config/keys_dev": false
+  },
   "scripts": {
     "start": "node app.js",
     "test": "jest"
