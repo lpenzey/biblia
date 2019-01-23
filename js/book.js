@@ -1,11 +1,11 @@
-// Book Class: Represents a book
+// Book Object: Represents a book
 
-class Book {
-  constructor(title, author, isbn) {
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
-  }
+function Book(title, author, imageLink, previewLink, isbn) {
+  this.title = title;
+  this.author = author;
+  this.imageLink = imageLink;
+  this.previewLink = previewLink;
+  this.isbn = isbn;
 }
 
 module.exports = Book;
