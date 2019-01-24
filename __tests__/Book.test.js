@@ -12,5 +12,5 @@ test("Should construct a new book", () => {
   expect(newBook.author).toEqual("JK Rowling");
   expect(newBook.imageLink).toEqual("www.imagelink.com");
   expect(newBook.previewLink).toEqual("www.previewlink.com");
-  expect(newBook.isbn).toEqual("123456789");
+  expect(newBook.id).toEqual("123456789");
 });
