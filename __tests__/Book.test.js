@@ -4,12 +4,14 @@ test("Should construct a new book", () => {
   const newBook = new Book(
     "Harry Potter",
     "JK Rowling",
+    "Pottermore Publishing Inc.",
     "www.imagelink.com",
     "www.previewlink.com",
     "123456789"
   );
   expect(newBook.title).toEqual("Harry Potter");
   expect(newBook.author).toEqual("JK Rowling");
+  expect(newBook.publishingCompany).toEqual("Pottermore Publishing Inc.");
   expect(newBook.imageLink).toEqual("www.imagelink.com");
   expect(newBook.previewLink).toEqual("www.previewlink.com");
   expect(newBook.id).toEqual("123456789");
