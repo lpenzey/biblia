@@ -1,13 +1,13 @@
 // search tasks
 const axios = require("axios");
-const googleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=";
+const googleBooksUrl = "https://www.googleapis.com/books/v1/volumes";
 const keys = require("../config/keys");
 const Book = require("./Book");
 
 const search = {
   fetchBooks: term =>
     axios
-      .get(googleBooksUrl + term + "&key=" + keys.googleBooksApiKey)
+      .get(googleBooksUrl + "?q=" + term + "&key=" + keys.googleBooksApiKey)
       .then(response => {
         // Instantiate books array
         const newLocal = [];
@@ -23,9 +23,9 @@ const search = {
           // Set previeww link
           const previewLink = item.volumeInfo.previewLink;
           // Set isbn
-          const isbn = item.volumeInfo.industryIdentifiers[0].identifier;
+          const id = item.id;
           // Create new Book with above parameters
-          const book = new Book(title, authors, imageLink, previewLink, isbn);
+          const book = new Book(title, authors, imageLink, previewLink, id);
           // Add to books array
           books.push(book);
         }
@@ -35,5 +35,4 @@ const search = {
       })
       .catch(err => "error")
 };
-
 module.exports = search;
