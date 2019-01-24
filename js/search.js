@@ -18,6 +18,8 @@ const search = {
           const title = item.volumeInfo.title;
           // Set author
           const authors = item.volumeInfo.authors;
+          // Set publishing company
+          const publishingCompany = item.volumeInfo.publisher;
           // Set image link
           const imageLink = item.volumeInfo.imageLinks.thumbnail;
           // Set previeww link
@@ -25,7 +27,14 @@ const search = {
           // Set isbn
           const id = item.id;
           // Create new Book with above parameters
-          const book = new Book(title, authors, imageLink, previewLink, id);
+          const book = new Book(
+            title,
+            authors,
+            publishingCompany,
+            imageLink,
+            previewLink,
+            id
+          );
           // Add to books array
           books.push(book);
         }
