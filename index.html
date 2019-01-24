@@ -29,20 +29,7 @@
   </head>
 
   <body>
-    <!-- navigation bar -->
-
-    <div class="navbar navbar-light">
-      <div class="container">
-        <div class="navbar-header">
-          <ul class="nav-bar-list">
-            <li id="logo" class="menu-text"><a href="index.html">βιβλία</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <!-- banner image and text -->
-
     <div class="banner">
       <div id="hero-text">
         <h1 class="display-4">Biblia</h1>
@@ -50,25 +37,55 @@
       </div>
     </div>
 
+    <!-- Search form -->
     <div class="container mt-4">
       <h2 class="display-5 text-center">Explore Book Titles</h2>
       <form id="book-form">
         <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" id="title" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label for="author">Author</label>
-          <input type="text" id="author" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label for="isbn">ISBN#</label>
-          <input type="text" id="isbn" class="form-control" />
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            placeholder="Title or author"
+          />
         </div>
         <input type="submit" value="Search" class="btn btn-primary btn-block" />
       </form>
       <div id="book-shelf" class="container mt-5"></div>
     </div>
+
+    <!-- Handlebars template -->
+
+    <script id="book-template" type="text/x-handlebars-template">
+      <div class="card-group">
+        <div class="card" style="width: 18rem;">
+          <a href="{{previewLink}}">
+            <img class="card-img-top" src="{{imageLink}}" alt="Book Cover">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">By {{author}}</p>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- list of books -->
+    <div class="container">
+      <ul class="books">
+        <div class="row" id="book-list"></div>
+      </ul>
+    </div>
+
+    <!-- user bookshelf 
+    <div class="container">
+      <ul class="books">
+        <div class="row"></div>
+      </ul>
+    </div>
+-->
+    <!-- handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <!-- Custom js -->
     <script src="bundle.js"></script>

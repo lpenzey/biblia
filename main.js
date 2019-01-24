@@ -4,35 +4,38 @@ const search = require("./js/search");
 
 // Event: Display Books
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
-// Event: Add a book
+// Event: Search for books
 document.querySelector("#book-form").addEventListener("submit", e => {
   // Get Form Values
   // Prevent default
   e.preventDefault();
   const title = document.querySelector("#title").value;
-  const author = document.querySelector("#author").value;
-  const isbn = document.querySelector("#isbn").value;
 
   // Validate
-  if (title === "" || author === "" || isbn === "") {
+  if (title === "") {
     console.log("Please fill in all fields", "danger");
   } else {
     // Perform google books search
-    gbooks = search.fetchBooks(title);
-    console.log(gbooks);
-    // Instantiate book
-    const book = new Book(title, author, isbn);
+    search.fetchBooks(title).then(result => {
+      json_books = JSON.parse(result);
+      for (const item of json_books) {
+        UI.displayBook(item);
+      }
+    });
+    //const booksArray = JSON.parse(gbooks);
 
-    // Add book to UI
-    console.log(book);
+    // Instantiate book
 
     // Add book to store
+
     // Store.addBook(book);
 
     // Show success message
+
     // UI.showAlert("Book Added", "success");
 
     // Clear Fields
-    UI.clearFields();
+    UI.clearField("#title");
+    UI.clearSearchedBooks("#book-list");
   }
 });

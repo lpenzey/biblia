@@ -6,12 +6,8 @@
     "type": "git",
     "url": ""
   },
-  "main": "app.js",
-  "browser": {
-    "./config/keys_dev": false
-  },
+  "main": "main.js",
   "scripts": {
-    "start": "node app.js",
     "test": "jest"
   },
   "author": "Lucas PenzeyMoog",
