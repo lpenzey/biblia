@@ -13,6 +13,7 @@
   "author": "Lucas PenzeyMoog",
   "license": "MIT",
   "devDependencies": {
+    "handlebars": "^4.0.12",
     "jest": "^23.6.0"
   },
   "dependencies": {
