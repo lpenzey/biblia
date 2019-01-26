@@ -28,28 +28,18 @@ test("displayBook gets Handlebars template from document", () => {
 
   // Instantiate complete book object
   const book = bookObject.complete;
-
   // Pass book into displayBook function
   UI.displayBook(book);
-
-  // Expect that the newly formatted html is appended to the #book-list div in the DOM
+  // Expect that the newly formatted html is appended to the #book-list div
   expect(document.querySelector("#book-list").innerHTML).toEqual(
     handlebars.complete
   );
-  expect(book).toBe();
 });
 
 // displayBook compiles an appropriate handlebars template
 
 //displayBook appends the new handlebars template to #book-list
-
-// Display stored books checks local storage for a user's books
-test("Handles case where there is no title listed", () => {
-  expect(2).toBe(1);
-});
-
 test("Handles case where there is no author listed", () => {});
-
 test("Handles case where there is no publishing company listed", () => {});
-// clearFields clears the fields of the form
 test("correctly returns a book with multiple authors", () => {});
+// clearFields clears the fields of the form
