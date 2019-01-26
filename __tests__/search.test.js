@@ -15,10 +15,17 @@ test("fetches results from google books api and formats correctly", () => {
     expect(response).toEqual(searchResponse.stringified);
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "https://www.googleapis.com/books/v1/volumes?q=tolkein&key=" +
+      "https://www.googleapis.com/books/v1/volumes?q=tolkein&startIndex=0&key=" +
         keys.googleBooksApiKey
     );
   });
 });
+test("correctly returns a book with multiple authors", () => {});
 
 test("correctly returns a book with multiple authors", () => {});
+
+test("Handles case where there is no title listed", () => {});
+
+test("Handles case where there is no author listed", () => {});
+
+test("Handles case where there is no publishing company listed", () => {});
