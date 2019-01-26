@@ -29,7 +29,7 @@ test("displayBook gets the Handlebars template from the DOM", () => {
   // Instantiate complete book object
   const book = bookObject.complete;
 
-  // Pass book into displayBoko function
+  // Pass book into displayBook function
   UI.displayBook(book);
 
   // Expect that the newly formatted html is appended to the #book-list div in the DOM
