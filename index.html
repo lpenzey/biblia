@@ -57,26 +57,29 @@
     <!-- Handlebars template -->
 
     <script id="book-template" type="text/x-handlebars-template">
-      <div class="card-group">
-        <div class="card" style="width: 18rem;">
+        <div class="card-deck">
+        <div class="card" style="width: 10rem;">
           <a href="{{previewLink}}">
             <img class="card-img-top" src="{{imageLink}}" alt="Book Cover">
           </a>
           <div class="card-body">
             <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">By {{author}}</p>
+            <p class="card-text">Author: {{author}}</p>
+            <p class="card-text">Publisher: {{publishingCompany}}</p>
           </div>
         </div>
       </div>
     </script>
 
     <!-- list of books -->
-    <div class="container">
-      <ul class="books">
-        <div class="row" id="book-list"></div>
-      </ul>
-    </div>
+    <div class="container"><div class="row" id="book-list"></div></div>
 
+    <!-- Load more books button-->
+    <div class="container">
+      <button type="button" id="book-load" class="btn btn-primary">
+        More books
+      </button>
+    </div>
     <!-- user bookshelf 
     <div class="container">
       <ul class="books">
