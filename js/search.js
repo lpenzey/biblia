@@ -5,9 +5,17 @@ const keys = require("../config/keys");
 const Book = require("./Book");
 
 const search = {
-  fetchBooks: term =>
+  fetchBooks: (term, index = 0) =>
     axios
-      .get(googleBooksUrl + "?q=" + term + "&key=" + keys.googleBooksApiKey)
+      .get(
+        googleBooksUrl +
+          "?q=" +
+          term +
+          "&startIndex=" +
+          index +
+          "&key=" +
+          keys.googleBooksApiKey
+      )
       .then(response => {
         // Instantiate books array
         const newLocal = [];
@@ -42,6 +50,6 @@ const search = {
         json_books = JSON.stringify(books);
         return json_books;
       })
-      .catch(err => "error")
+      .catch(err => err.response)
 };
 module.exports = search;
