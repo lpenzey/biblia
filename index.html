@@ -25,16 +25,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-    <title>Biblia: Pocket Bookshelf</title>
+    <title>Biblia</title>
   </head>
 
   <body>
     <!-- banner image and text -->
     <div class="banner">
-      <div id="hero-text">
-        <h1 class="display-4">Biblia</h1>
-        <h4>Pocket Library</h4>
-      </div>
+      <div id="hero-text"><h1 class="display-1">Biblia</h1></div>
     </div>
 
     <!-- Search form -->
@@ -46,10 +43,10 @@
             type="text"
             id="title"
             class="form-control"
-            placeholder="Title or author"
+            placeholder="Book title"
           />
         </div>
-        <input type="submit" value="Search" class="btn btn-primary btn-block" />
+        <input type="submit" value="Search" class="btn btn-dark btn-lg" />
       </form>
       <div id="book-shelf" class="container mt-5"></div>
     </div>
@@ -57,36 +54,37 @@
     <!-- Handlebars template -->
 
     <script id="book-template" type="text/x-handlebars-template">
-        <div class="card-deck">
-        <div class="card" style="width: 10rem;">
+      <div class="col-">
+      <div class="card">
           <a href="{{previewLink}}">
             <img class="card-img-top" src="{{imageLink}}" alt="Book Cover">
           </a>
           <div class="card-body">
             <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">Author: {{author}}</p>
-            <p class="card-text">Publisher: {{publishingCompany}}</p>
+            <h6 class="card-subtitle">Written By</h6>
+            <p class="card-text">{{author}}</p>
+            <h6 class="card-subtitle">Publisher</h6>
+            <p class="card-text">{{publishingCompany}}</p>
           </div>
         </div>
       </div>
     </script>
 
     <!-- list of books -->
-    <div class="container"><div class="row" id="book-list"></div></div>
+    <div class="container"><div class="card-deck" id="book-list"></div></div>
 
-    <!-- Load more books button-->
+    <!-- Load more and clear books buttons-->
+    <br />
     <div class="container">
       <button type="button" id="book-load" class="btn btn-primary">
         More books
       </button>
+      <button type="button" id="book-clear" class="btn btn-danger">
+        Clear books
+      </button>
     </div>
-    <!-- user bookshelf 
-    <div class="container">
-      <ul class="books">
-        <div class="row"></div>
-      </ul>
-    </div>
--->
+    <br />
+
     <!-- handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
