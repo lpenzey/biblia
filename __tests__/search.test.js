@@ -20,12 +20,4 @@ test("fetches results from google books api and formats correctly", () => {
     );
   });
 });
-test("correctly returns a book with multiple authors", () => {});
-
-test("correctly returns a book with multiple authors", () => {});
-
-test("Handles case where there is no title listed", () => {});
-
-test("Handles case where there is no author listed", () => {});
-
-test("Handles case where there is no publishing company listed", () => {});
+test("increases the index by 10 when more books button is clicked", () => {});
