@@ -1,2 +1,6 @@
 keys_dev.jsg
 node_modules
+.firebase/
+.firebaserc
+firebase.json
+y/
