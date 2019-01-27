@@ -7,49 +7,32 @@ const Book = require("./Book");
 const search = {
   fetchBooks: (term, index = 0) =>
     axios
-      .get(
-        googleBooksUrl +
-          "?q=" +
-          term +
-          "&startIndex=" +
-          index +
-          "&key=" +
-          keys.googleBooksApiKey
-      )
-      .then(response => {
-        // Instantiate books array
-        const newLocal = [];
-        const books = newLocal;
-        // Loop through api response object
-        for (const item of response.data.items) {
-          // Set title
-          const title = item.volumeInfo.title;
-          // Set author
-          const authors = item.volumeInfo.authors;
-          // Set publishing company
-          const publishingCompany = item.volumeInfo.publisher;
-          // Set image link
-          const imageLink = item.volumeInfo.imageLinks.thumbnail;
-          // Set previeww link
-          const previewLink = item.volumeInfo.previewLink;
-          // Set isbn
-          const id = item.id;
-          // Create new Book with above parameters
-          const book = new Book(
-            title,
-            authors,
-            publishingCompany,
-            imageLink,
-            previewLink,
-            id
-          );
-          // Add to books array
-          books.push(book);
+      .get(googleBooksUrl, {
+        params: {
+          q: term,
+          startIndex: index,
+          key: keys.googleBooksApiKey
         }
-        // Convert to JSON string
-        json_books = JSON.stringify(books);
-        return json_books;
       })
-      .catch(err => err.response)
+      .then(response => {
+        return response;
+      })
+      .catch(err => err.response),
+  parseBooks: response => {
+    const books = [];
+    for (const item of response.data.items) {
+      let bookInfo = item.volumeInfo;
+      const book = new Book(
+        bookInfo.title,
+        bookInfo.authors,
+        bookInfo.publisher,
+        bookInfo.imageLinks.thumbnail,
+        bookInfo.previewLink,
+        bookInfo.id
+      );
+      books.push(book);
+    }
+    return books;
+  }
 };
 module.exports = search;
