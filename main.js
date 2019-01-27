@@ -1,15 +1,11 @@
 const UI = require("./js/ui");
-const Book = require("./js/Book");
 const search = require("./js/search");
 const store = require("./js/store");
 
-// Event: Hide Buttons
 document.addEventListener("DOMContentLoaded", UI.hideButtons);
-// Event: Search for books
+
 document.querySelector("#book-form").addEventListener("submit", e => {
-  // Prevent default
   e.preventDefault();
-  // Get Form Values
   const title = document.querySelector("#title").value;
 
   // Validate input
@@ -20,12 +16,13 @@ document.querySelector("#book-form").addEventListener("submit", e => {
     store.setLatestQuery(title);
     store.setIndex(0);
 
-    // Perform google books search
-    search.fetchBooks(title).then(result => {
-      json_books = JSON.parse(result);
-      for (const item of json_books) {
+    search.fetchBooks(title).then(response => {
+      booksArr = search.parseBooks(response);
+
+      for (const item of booksArr) {
         UI.displayBook(item);
       }
+
       UI.showButtons();
     });
 
@@ -48,10 +45,10 @@ document.querySelector("#book-load").addEventListener("click", e => {
   // Retrieve current search query
   const title = sessionStorage.latestQuery;
   // Search for more books using the current query and updated index
-  search.fetchBooks(title, index).then(result => {
-    books = JSON.parse(result);
-    // Iterate through parsed API response and add to UI
-    for (const item of books) {
+  search.fetchBooks(title).then(response => {
+    booksArr = search.parseBooks(response);
+
+    for (const item of booksArr) {
       UI.displayBook(item);
     }
   });
