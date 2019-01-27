@@ -1,7 +1,7 @@
 {
   "name": "biblia",
   "version": "1.0.0",
-  "description": "Add books to a pocket library",
+  "description": "Search for books from google books api",
   "repository": {
     "type": "git",
     "url": ""
@@ -9,16 +9,16 @@
   "main": "main.js",
   "scripts": {
     "test": "jest",
-    "start": "browserify main.js > bundle.js"
+    "build": "browserify main.js > public/bundle.js"
   },
   "author": "Lucas PenzeyMoog",
   "license": "MIT",
   "devDependencies": {
+    "browserify": "^16.2.3",
     "handlebars": "^4.0.12",
     "jest": "^23.6.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "browserify": "^16.2.3"
+    "axios": "^0.18.0"
   }
 }
