@@ -55,3 +55,8 @@ test("parseBooks correctly parses full response object", () => {
   booksArr = search.parseBooks(searchResponse.raw);
   expect(booksArr).toEqual(searchResponse.parsed);
 });
+
+test("parseBooks rejects response object with undefined image field", () => {
+  booksArr = search.parseBooks(searchResponse.noImageLinks);
+  expect(booksArr).toEqual([]);
+});

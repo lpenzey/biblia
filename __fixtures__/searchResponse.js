@@ -1110,5 +1110,116 @@ module.exports = {
       publisher: "HMH",
       title: "J.R.R. Tolkien"
     }
-  ]
+  ],
+  noImageLinks: {
+    data: {
+      kind: "books#volumes",
+      totalItems: 2807,
+      items: [
+        {
+          kind: "books#volume",
+          id: "M7IQ4jTC0esC",
+          etag: "EI9Us6nlmkU",
+          selfLink: "https://www.googleapis.com/books/v1/volumes/M7IQ4jTC0esC",
+          volumeInfo: {
+            title: "J.R.R. Tolkien",
+            subtitle: "A Biography",
+            authors: ["Leslie Jones"],
+            publisher: "Greenwood Publishing Group",
+            publishedDate: "2003",
+            description:
+              'Profiles the life and literary career of J.R.R. Tolkien, author of "The Hobbit" and "The Lord of the Rings" trilogy.',
+            industryIdentifiers: [
+              {
+                type: "ISBN_10",
+                identifier: "0313323402"
+              },
+              {
+                type: "ISBN_13",
+                identifier: "9780313323409"
+              }
+            ],
+            readingModes: {
+              text: true,
+              image: true
+            },
+            pageCount: 156,
+            printType: "BOOK",
+            categories: ["Biography & Autobiography"],
+            averageRating: 4.0,
+            ratingsCount: 4,
+            maturityRating: "NOT_MATURE",
+            allowAnonLogging: false,
+            contentVersion: "0.0.3.0.preview.3",
+            panelizationSummary: {
+              containsEpubBubbles: false,
+              containsImageBubbles: false
+            },
+
+            language: "en",
+            previewLink:
+              "http://books.google.com/books?id=M7IQ4jTC0esC&printsec=frontcover&dq=tolkein&hl=&cd=1&source=gbs_api",
+            infoLink:
+              "https://play.google.com/store/books/details?id=M7IQ4jTC0esC&source=gbs_api",
+            canonicalVolumeLink:
+              "https://market.android.com/details?id=book-M7IQ4jTC0esC"
+          },
+          saleInfo: {
+            country: "US",
+            saleability: "FOR_SALE",
+            isEbook: true,
+            listPrice: {
+              amount: 38.95,
+              currencyCode: "USD"
+            },
+            retailPrice: {
+              amount: 31.16,
+              currencyCode: "USD"
+            },
+            buyLink:
+              "https://play.google.com/store/books/details?id=M7IQ4jTC0esC&rdid=book-M7IQ4jTC0esC&rdot=1&source=gbs_api",
+            offers: [
+              {
+                finskyOfferType: 1,
+                listPrice: {
+                  amountInMicros: 3.895e7,
+                  currencyCode: "USD"
+                },
+                retailPrice: {
+                  amountInMicros: 3.116e7,
+                  currencyCode: "USD"
+                },
+                giftable: true
+              }
+            ]
+          },
+          accessInfo: {
+            country: "US",
+            viewability: "PARTIAL",
+            embeddable: true,
+            publicDomain: false,
+            textToSpeechPermission: "ALLOWED",
+            epub: {
+              isAvailable: true,
+              acsTokenLink:
+                "http://books.google.com/books/download/J_R_R_Tolkien-sample-epub.acsm?id=M7IQ4jTC0esC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            pdf: {
+              isAvailable: true,
+              acsTokenLink:
+                "http://books.google.com/books/download/J_R_R_Tolkien-sample-pdf.acsm?id=M7IQ4jTC0esC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            webReaderLink:
+              "http://play.google.com/books/reader?id=M7IQ4jTC0esC&hl=&printsec=frontcover&source=gbs_api",
+            accessViewStatus: "SAMPLE",
+            quoteSharingAllowed: false
+          },
+          searchInfo: {
+            textSnippet:
+              "Profiles the life and literary career of J.R.R. Tolkien, author of &quot;The Hobbit&quot; and &quot;The Lord of the Rings&quot; trilogy."
+          }
+        }
+      ]
+    }
+  }
 };

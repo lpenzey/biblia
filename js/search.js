@@ -22,15 +22,17 @@ const search = {
     const books = [];
     for (const item of response.data.items) {
       let bookInfo = item.volumeInfo;
-      const book = new Book(
-        bookInfo.title,
-        bookInfo.authors,
-        bookInfo.publisher,
-        bookInfo.imageLinks.thumbnail,
-        bookInfo.previewLink,
-        bookInfo.id
-      );
-      books.push(book);
+      if (typeof bookInfo.imageLinks != "undefined") {
+        const book = new Book(
+          bookInfo.title,
+          bookInfo.authors,
+          bookInfo.publisher,
+          bookInfo.imageLinks.thumbnail,
+          bookInfo.previewLink,
+          item.id
+        );
+        books.push(book);
+      }
     }
     return books;
   }
