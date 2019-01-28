@@ -1009,6 +1009,106 @@ module.exports = {
       ]
     }
   },
-  stringified:
-    '[{"title":"J.R.R. Tolkien","author":["Leslie Jones"],"publishingCompany":"Greenwood Publishing Group","imageLink":"http://books.google.com/books/content?id=M7IQ4jTC0esC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=M7IQ4jTC0esC&printsec=frontcover&dq=tolkein&hl=&cd=1&source=gbs_api","id":"M7IQ4jTC0esC"},{"title":"J.R.R. Tolkien","author":["Humphrey Carpenter"],"publishingCompany":"Houghton Mifflin Harcourt","imageLink":"http://books.google.com/books/content?id=zWzAAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=zWzAAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=2&source=gbs_api","id":"zWzAAgAAQBAJ"},{"title":"The Fall of Gondolin","author":["J.R.R. Tolkien"],"publishingCompany":"Houghton Mifflin Harcourt","imageLink":"http://books.google.com/books/content?id=bPJUDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=bPJUDwAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=3&source=gbs_api","id":"bPJUDwAAQBAJ"},{"title":"J.R.R. Tolkien and His Literary Resonances","author":["Sir George Clark, Sir"],"publishingCompany":"Greenwood Publishing Group","imageLink":"http://books.google.com/books/content?id=ES0Hs75IVg0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=ES0Hs75IVg0C&printsec=frontcover&dq=tolkein&hl=&cd=4&source=gbs_api","id":"ES0Hs75IVg0C"},{"title":"The Letters of J.R.R. Tolkien","author":["J.R.R. Tolkien"],"publishingCompany":"Houghton Mifflin Harcourt","imageLink":"http://books.google.com/books/content?id=9eLCAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=9eLCAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=5&source=gbs_api","id":"9eLCAgAAQBAJ"},{"title":"A Tolkien Compass","author":["Jared Lobdell"],"publishingCompany":"Open Court Publishing","imageLink":"http://books.google.com/books/content?id=TqJ7gHrwjUEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=TqJ7gHrwjUEC&printsec=frontcover&dq=tolkein&hl=&cd=6&source=gbs_api","id":"TqJ7gHrwjUEC"},{"title":"Tolkien and the Invention of Myth: A Reader","author":["Jane Chance"],"publishingCompany":"University Press of Kentucky","imageLink":"http://books.google.com/books/content?id=8LLxZXqgJdwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=8LLxZXqgJdwC&printsec=frontcover&dq=tolkein&hl=&cd=7&source=gbs_api","id":"8LLxZXqgJdwC"},{"title":"Tolkien and the Great War","author":["John Garth"],"publishingCompany":"HMH","imageLink":"http://books.google.com/books/content?id=rMiUN8qeOBoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=rMiUN8qeOBoC&pg=PA60&dq=tolkein&hl=&cd=8&source=gbs_api","id":"rMiUN8qeOBoC"},{"title":"The Gospel According to Tolkien","author":["Ralph C. Wood"],"publishingCompany":"Westminster John Knox Press","imageLink":"http://books.google.com/books/content?id=vA-MDa3UyScC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=vA-MDa3UyScC&printsec=frontcover&dq=tolkein&hl=&cd=9&source=gbs_api","id":"vA-MDa3UyScC"},{"title":"J.R.R. Tolkien","author":["Tom Shippey"],"publishingCompany":"HMH","imageLink":"http://books.google.com/books/content?id=F23AAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api","previewLink":"http://books.google.com/books?id=F23AAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=10&source=gbs_api","id":"F23AAgAAQBAJ"}]'
+  parsed: [
+    {
+      author: ["Leslie Jones"],
+      id: "M7IQ4jTC0esC",
+      imageLink:
+        "http://books.google.com/books/content?id=M7IQ4jTC0esC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=M7IQ4jTC0esC&printsec=frontcover&dq=tolkein&hl=&cd=1&source=gbs_api",
+      publisher: "Greenwood Publishing Group",
+      title: "J.R.R. Tolkien"
+    },
+    {
+      author: ["Humphrey Carpenter"],
+      id: "zWzAAgAAQBAJ",
+      imageLink:
+        "http://books.google.com/books/content?id=zWzAAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=zWzAAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=2&source=gbs_api",
+      publisher: "Houghton Mifflin Harcourt",
+      title: "J.R.R. Tolkien"
+    },
+    {
+      author: ["J.R.R. Tolkien"],
+      id: "bPJUDwAAQBAJ",
+      imageLink:
+        "http://books.google.com/books/content?id=bPJUDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=bPJUDwAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=3&source=gbs_api",
+      publisher: "Houghton Mifflin Harcourt",
+      title: "The Fall of Gondolin"
+    },
+    {
+      author: ["Sir George Clark, Sir"],
+      id: "ES0Hs75IVg0C",
+      imageLink:
+        "http://books.google.com/books/content?id=ES0Hs75IVg0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=ES0Hs75IVg0C&printsec=frontcover&dq=tolkein&hl=&cd=4&source=gbs_api",
+      publisher: "Greenwood Publishing Group",
+      title: "J.R.R. Tolkien and His Literary Resonances"
+    },
+    {
+      author: ["J.R.R. Tolkien"],
+      id: "9eLCAgAAQBAJ",
+      imageLink:
+        "http://books.google.com/books/content?id=9eLCAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=9eLCAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=5&source=gbs_api",
+      publisher: "Houghton Mifflin Harcourt",
+      title: "The Letters of J.R.R. Tolkien"
+    },
+    {
+      author: ["Jared Lobdell"],
+      id: "TqJ7gHrwjUEC",
+      imageLink:
+        "http://books.google.com/books/content?id=TqJ7gHrwjUEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=TqJ7gHrwjUEC&printsec=frontcover&dq=tolkein&hl=&cd=6&source=gbs_api",
+      publisher: "Open Court Publishing",
+      title: "A Tolkien Compass"
+    },
+    {
+      author: ["Jane Chance"],
+      id: "8LLxZXqgJdwC",
+      imageLink:
+        "http://books.google.com/books/content?id=8LLxZXqgJdwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=8LLxZXqgJdwC&printsec=frontcover&dq=tolkein&hl=&cd=7&source=gbs_api",
+      publisher: "University Press of Kentucky",
+      title: "Tolkien and the Invention of Myth: A Reader"
+    },
+    {
+      author: ["John Garth"],
+      id: "rMiUN8qeOBoC",
+      imageLink:
+        "http://books.google.com/books/content?id=rMiUN8qeOBoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=rMiUN8qeOBoC&pg=PA60&dq=tolkein&hl=&cd=8&source=gbs_api",
+      publisher: "HMH",
+      title: "Tolkien and the Great War"
+    },
+    {
+      author: ["Ralph C. Wood"],
+      id: "vA-MDa3UyScC",
+      imageLink:
+        "http://books.google.com/books/content?id=vA-MDa3UyScC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=vA-MDa3UyScC&printsec=frontcover&dq=tolkein&hl=&cd=9&source=gbs_api",
+      publisher: "Westminster John Knox Press",
+      title: "The Gospel According to Tolkien"
+    },
+    {
+      author: ["Tom Shippey"],
+      id: "F23AAgAAQBAJ",
+      imageLink:
+        "http://books.google.com/books/content?id=F23AAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      previewLink:
+        "http://books.google.com/books?id=F23AAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=10&source=gbs_api",
+      publisher: "HMH",
+      title: "J.R.R. Tolkien"
+    }
+  ]
 };
