@@ -1,5 +1,3 @@
-// Book Object: Represents a book
-
 function Book(title, author, publisher, imageLink, previewLink, id) {
   this.title = title;
   this.author = author;
