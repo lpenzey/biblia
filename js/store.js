@@ -1,6 +1,18 @@
 const store = {
-  setLatestQuery: term => sessionStorage.setItem("latestQuery", term),
-  setIndex: int => sessionStorage.setItem("index", int)
+  setSearchParams: (term, int = "0") => {
+    localStorage.setItem("latestQuery", term);
+    localStorage.setItem("index", int);
+  },
+  getLatestQuery: () => {
+    return localStorage.latestQuery;
+  },
+  getLatestIndex: () => {
+    return parseInt(localStorage.index, 10);
+  },
+  incrementIndex: num => {
+    var index = parseInt(localStorage.index, 10);
+    return (index = index += num);
+  }
 };
 
 module.exports = store;
