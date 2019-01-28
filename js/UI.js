@@ -2,17 +2,9 @@ const Handlebars = require("handlebars");
 
 const UI = {
   displayBook(book) {
-    // Get  handlebars template in index.html
-
     const source = document.querySelector("#book-template").innerHTML;
-
-    // Create handlebars template
     const template = Handlebars.compile(source);
-
-    // Create new book card
     const newHtml = template(book);
-
-    // Append each book to the list
     document.querySelector("#book-list").innerHTML += newHtml;
   },
   enlargeImage(book, size) {
@@ -33,6 +25,15 @@ const UI = {
   hideButtons() {
     document.querySelector("#book-load").style.visibility = "hidden";
     document.querySelector("#book-clear").style.visibility = "hidden";
+  },
+  showAlert(message, className) {
+    const div = document.createElement("div");
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector(".container");
+    const bookshelf = document.querySelector("#book-shelf");
+    container.insertBefore(div, bookshelf);
+    setTimeout(() => document.querySelector(".alert").remove(), 3000);
   }
 };
 
