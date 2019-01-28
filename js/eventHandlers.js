@@ -4,6 +4,7 @@ const store = require("./store");
 
 const eventHandlers = {
   bookForm() {
+    UI.clearSearchedBooks("#book-list");
     const title = document.querySelector("#title").value;
     if (title === "") {
       console.log("Please fill in all fields", "danger");
