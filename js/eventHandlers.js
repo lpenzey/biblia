@@ -3,14 +3,13 @@ const search = require("./search");
 const store = require("./store");
 
 const eventHandlers = {
-  bookForm() {
+  bookForm: () => {
     UI.clearSearchedBooks("#book-list");
     const title = document.querySelector("#title").value;
     if (title === "") {
-      console.log("Please fill in all fields", "danger");
+      UI.showAlert("Please enter a query", "warning");
     } else {
-      store.setLatestQuery(title);
-      store.setIndex(0);
+      store.setSearchParams(title);
       search.fetchBooks(title).then(response => {
         booksArr = search.parseBooks(response);
         for (const item of booksArr) {
@@ -21,11 +20,10 @@ const eventHandlers = {
       UI.clearField("#title");
     }
   },
-  loadMoreBooks() {
-    var index = parseInt(sessionStorage.index, 10);
-    index = index += 10;
-    store.setIndex(index);
-    const title = sessionStorage.latestQuery;
+  loadMoreBooks: () => {
+    var index = store.incrementIndex(10);
+    const title = store.getLatestQuery();
+    store.setSearchParams(title, index);
     search.fetchBooks(title, index).then(response => {
       booksArr = search.parseBooks(response);
       for (const item of booksArr) {
