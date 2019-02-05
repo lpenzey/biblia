@@ -1,6 +1,6 @@
-function Book(title, author, publisher, imageLink, previewLink, id) {
+function Book(title, authors, publisher, imageLink, previewLink, id) {
   this.title = title;
-  this.author = author;
+  this.authors = authors;
   this.publisher = publisher;
   this.imageLink = imageLink;
   this.previewLink = previewLink;
