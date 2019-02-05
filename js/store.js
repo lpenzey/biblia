@@ -12,6 +12,9 @@ const store = {
   incrementIndex: num => {
     var index = parseInt(localStorage.index, 10);
     return (index = index += num);
+  },
+  clearSearchedBooks(element) {
+    document.querySelector(element).innerHTML = null;
   }
 };
 
