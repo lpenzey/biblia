@@ -1011,104 +1011,144 @@ module.exports = {
   },
   parsed: [
     {
-      author: ["Leslie Jones"],
-      id: "M7IQ4jTC0esC",
-      imageLink:
-        "http://books.google.com/books/content?id=M7IQ4jTC0esC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=M7IQ4jTC0esC&printsec=frontcover&dq=tolkein&hl=&cd=1&source=gbs_api",
-      publisher: "Greenwood Publishing Group",
-      title: "J.R.R. Tolkien"
+      title: { title: "J.R.R. Tolkien" },
+      authors: { authors: ["Leslie Jones"] },
+      publisher: { publisher: "Greenwood Publishing Group" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=M7IQ4jTC0esC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=M7IQ4jTC0esC&printsec=frontcover&dq=tolkein&hl=&cd=1&source=gbs_api"
+      },
+      id: { id: "M7IQ4jTC0esC" }
     },
     {
-      author: ["Humphrey Carpenter"],
-      id: "zWzAAgAAQBAJ",
-      imageLink:
-        "http://books.google.com/books/content?id=zWzAAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=zWzAAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=2&source=gbs_api",
-      publisher: "Houghton Mifflin Harcourt",
-      title: "J.R.R. Tolkien"
+      title: { title: "J.R.R. Tolkien" },
+      authors: { authors: ["Humphrey Carpenter"] },
+      publisher: { publisher: "Houghton Mifflin Harcourt" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=zWzAAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=zWzAAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=2&source=gbs_api"
+      },
+      id: { id: "zWzAAgAAQBAJ" }
     },
     {
-      author: ["J.R.R. Tolkien"],
-      id: "bPJUDwAAQBAJ",
-      imageLink:
-        "http://books.google.com/books/content?id=bPJUDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=bPJUDwAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=3&source=gbs_api",
-      publisher: "Houghton Mifflin Harcourt",
-      title: "The Fall of Gondolin"
+      title: { title: "The Fall of Gondolin" },
+      authors: { authors: ["J.R.R. Tolkien"] },
+      publisher: { publisher: "Houghton Mifflin Harcourt" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=bPJUDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=bPJUDwAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=3&source=gbs_api"
+      },
+      id: { id: "bPJUDwAAQBAJ" }
     },
     {
-      author: ["Sir George Clark, Sir"],
-      id: "ES0Hs75IVg0C",
-      imageLink:
-        "http://books.google.com/books/content?id=ES0Hs75IVg0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=ES0Hs75IVg0C&printsec=frontcover&dq=tolkein&hl=&cd=4&source=gbs_api",
-      publisher: "Greenwood Publishing Group",
-      title: "J.R.R. Tolkien and His Literary Resonances"
+      title: { title: "J.R.R. Tolkien and His Literary Resonances" },
+      authors: { authors: ["Sir George Clark, Sir"] },
+      publisher: { publisher: "Greenwood Publishing Group" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=ES0Hs75IVg0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=ES0Hs75IVg0C&printsec=frontcover&dq=tolkein&hl=&cd=4&source=gbs_api"
+      },
+      id: { id: "ES0Hs75IVg0C" }
     },
     {
-      author: ["J.R.R. Tolkien"],
-      id: "9eLCAgAAQBAJ",
-      imageLink:
-        "http://books.google.com/books/content?id=9eLCAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=9eLCAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=5&source=gbs_api",
-      publisher: "Houghton Mifflin Harcourt",
-      title: "The Letters of J.R.R. Tolkien"
+      title: { title: "The Letters of J.R.R. Tolkien" },
+      authors: { authors: ["J.R.R. Tolkien"] },
+      publisher: { publisher: "Houghton Mifflin Harcourt" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=9eLCAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=9eLCAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=5&source=gbs_api"
+      },
+      id: { id: "9eLCAgAAQBAJ" }
     },
     {
-      author: ["Jared Lobdell"],
-      id: "TqJ7gHrwjUEC",
-      imageLink:
-        "http://books.google.com/books/content?id=TqJ7gHrwjUEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=TqJ7gHrwjUEC&printsec=frontcover&dq=tolkein&hl=&cd=6&source=gbs_api",
-      publisher: "Open Court Publishing",
-      title: "A Tolkien Compass"
+      title: { title: "A Tolkien Compass" },
+      authors: { authors: ["Jared Lobdell"] },
+      publisher: { publisher: "Open Court Publishing" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=TqJ7gHrwjUEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=TqJ7gHrwjUEC&printsec=frontcover&dq=tolkein&hl=&cd=6&source=gbs_api"
+      },
+      id: { id: "TqJ7gHrwjUEC" }
     },
     {
-      author: ["Jane Chance"],
-      id: "8LLxZXqgJdwC",
-      imageLink:
-        "http://books.google.com/books/content?id=8LLxZXqgJdwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=8LLxZXqgJdwC&printsec=frontcover&dq=tolkein&hl=&cd=7&source=gbs_api",
-      publisher: "University Press of Kentucky",
-      title: "Tolkien and the Invention of Myth: A Reader"
+      title: { title: "Tolkien and the Invention of Myth: A Reader" },
+      authors: { authors: ["Jane Chance"] },
+      publisher: { publisher: "University Press of Kentucky" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=8LLxZXqgJdwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=8LLxZXqgJdwC&printsec=frontcover&dq=tolkein&hl=&cd=7&source=gbs_api"
+      },
+      id: { id: "8LLxZXqgJdwC" }
     },
     {
-      author: ["John Garth"],
-      id: "rMiUN8qeOBoC",
-      imageLink:
-        "http://books.google.com/books/content?id=rMiUN8qeOBoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=rMiUN8qeOBoC&pg=PA60&dq=tolkein&hl=&cd=8&source=gbs_api",
-      publisher: "HMH",
-      title: "Tolkien and the Great War"
+      title: { title: "Tolkien and the Great War" },
+      authors: { authors: ["John Garth"] },
+      publisher: { publisher: "HMH" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=rMiUN8qeOBoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=rMiUN8qeOBoC&pg=PA60&dq=tolkein&hl=&cd=8&source=gbs_api"
+      },
+      id: { id: "rMiUN8qeOBoC" }
     },
     {
-      author: ["Ralph C. Wood"],
-      id: "vA-MDa3UyScC",
-      imageLink:
-        "http://books.google.com/books/content?id=vA-MDa3UyScC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=vA-MDa3UyScC&printsec=frontcover&dq=tolkein&hl=&cd=9&source=gbs_api",
-      publisher: "Westminster John Knox Press",
-      title: "The Gospel According to Tolkien"
+      title: { title: "The Gospel According to Tolkien" },
+      authors: { authors: ["Ralph C. Wood"] },
+      publisher: { publisher: "Westminster John Knox Press" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=vA-MDa3UyScC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=vA-MDa3UyScC&printsec=frontcover&dq=tolkein&hl=&cd=9&source=gbs_api"
+      },
+      id: { id: "vA-MDa3UyScC" }
     },
     {
-      author: ["Tom Shippey"],
-      id: "F23AAgAAQBAJ",
-      imageLink:
-        "http://books.google.com/books/content?id=F23AAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      previewLink:
-        "http://books.google.com/books?id=F23AAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=10&source=gbs_api",
-      publisher: "HMH",
-      title: "J.R.R. Tolkien"
+      title: { title: "J.R.R. Tolkien" },
+      authors: { authors: ["Tom Shippey"] },
+      publisher: { publisher: "HMH" },
+      imageLink: {
+        imageLink:
+          "http://books.google.com/books/content?id=F23AAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      previewLink: {
+        previewLink:
+          "http://books.google.com/books?id=F23AAgAAQBAJ&printsec=frontcover&dq=tolkein&hl=&cd=10&source=gbs_api"
+      },
+      id: { id: "F23AAgAAQBAJ" }
     }
   ],
   noImageLinks: {

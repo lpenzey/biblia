@@ -8,8 +8,8 @@ module.exports = {
     "</a>" +
     '<div class="card-body">' +
     '<h5 class="card-title">{{title}}</h5>' +
-    '<p class="card-text">Written by: {{author}}</p>' +
-    '<p class="card-text">Published by: {{publishingCompany}}</p>' +
+    '<p class="card-text">Written by: {{authors}}</p>' +
+    '<p class="card-text">Published by: {{publisher}}</p>' +
     "</div>" +
     "</div>" +
     "</div>" +
@@ -19,5 +19,4 @@ module.exports = {
     '<div class="row" id="book-list"></div>' +
     "</ul>" +
     "</div>"
-  //withBooks:
 };
