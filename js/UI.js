@@ -15,9 +15,6 @@ const UI = {
   clearField(element) {
     document.querySelector(element).value = "";
   },
-  clearSearchedBooks(element) {
-    document.querySelector(element).innerHTML = null;
-  },
   showButtons() {
     document.querySelector("#book-load").style.visibility = "visible";
     document.querySelector("#book-clear").style.visibility = "visible";
@@ -34,6 +31,17 @@ const UI = {
     const bookshelf = document.querySelector("#book-shelf");
     container.insertBefore(div, bookshelf);
     setTimeout(() => document.querySelector(".alert").remove(), 3000);
+  },
+  loadingMessage(message, className) {
+    const div = document.createElement("div");
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector(".container");
+    const bookshelf = document.querySelector("#book-shelf");
+    container.insertBefore(div, bookshelf);
+  },
+  clearElement(element) {
+    document.querySelector(element).remove();
   }
 };
 
