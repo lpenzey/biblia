@@ -1,3 +1,4 @@
+.DS_Store
 keys_dev.jsg
 node_modules
 .firebase/
