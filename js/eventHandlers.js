@@ -4,7 +4,7 @@ const store = require("./store");
 
 const eventHandlers = {
   bookForm: () => {
-    store.clearSearchedBooks("#book-list");
+    store.clearSearchedBooks();
     const title = document.querySelector("#title").value;
     if (title !== "") {
       store.setSearchParams(title);
@@ -26,11 +26,15 @@ const eventHandlers = {
     const title = store.getLatestQuery();
     store.setSearchParams(title, index);
     search.fetchBooks(title, index).then(response => {
-      newBooks = search.parseBooks(response);
-      existingBooks = store.getBookResults();
-      allBooks = existingBooks.concat(newBooks);
-      store.setBookResults(allBooks);
-      UI.searchSuccess();
+      if (typeof response.data.items != "undefined") {
+        newBooks = search.parseBooks(response);
+        existingBooks = store.getBookResults();
+        allBooks = existingBooks.concat(newBooks);
+        store.setBookResults(allBooks);
+        UI.searchSuccess();
+      } else {
+        UI.searchFail("resultsEnd");
+      }
     });
   }
 };
