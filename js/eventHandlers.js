@@ -4,20 +4,21 @@ const store = require("./store");
 
 const eventHandlers = {
   bookForm: () => {
-    UI.clearSearchedBooks("#book-list");
+    store.clearSearchedBooks("#book-list");
     const title = document.querySelector("#title").value;
-    if (title === "") {
-      UI.showAlert("Please enter a query", "warning");
-    } else {
+    if (title !== "") {
       store.setSearchParams(title);
       search.fetchBooks(title).then(response => {
-        booksArr = search.parseBooks(response);
-        for (const item of booksArr) {
-          UI.displayBook(item);
+        if (response.data.totalItems !== 0) {
+          booksArr = search.parseBooks(response);
+          store.setBookResults(booksArr);
+          UI.searchSuccess();
+        } else {
+          UI.searchFail("results");
         }
-        UI.showButtons();
       });
-      UI.clearField("#title");
+    } else {
+      UI.searchFail("query");
     }
   },
   loadMoreBooks: () => {
@@ -25,10 +26,11 @@ const eventHandlers = {
     const title = store.getLatestQuery();
     store.setSearchParams(title, index);
     search.fetchBooks(title, index).then(response => {
-      booksArr = search.parseBooks(response);
-      for (const item of booksArr) {
-        UI.displayBook(item);
-      }
+      newBooks = search.parseBooks(response);
+      existingBooks = store.getBookResults();
+      allBooks = existingBooks.concat(newBooks);
+      store.setBookResults(allBooks);
+      UI.searchSuccess();
     });
   }
 };

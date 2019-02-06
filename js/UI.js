@@ -1,6 +1,29 @@
 const Handlebars = require("handlebars");
+const store = require("./store");
 
 const UI = {
+  searchFail(failure) {
+    if (failure === "query") {
+      this.showAlert("Please enter a search query", "danger");
+    } else if (failure === "results") {
+      this.showAlert("No books found", "danger");
+    }
+    this.clearField("#title");
+    this.hideButtons();
+  },
+  searchSuccess() {
+    this.loadingMessage("Loading books", "info");
+    storedBooks = store.getBookResults();
+    booksToDisplay = storedBooks.slice(-10);
+    this.loopThroughBooks(booksToDisplay);
+    this.clearField("#title");
+    this.showButtons();
+  },
+  loopThroughBooks(books) {
+    for (const item of books) {
+      this.displayBook(item);
+    }
+  },
   displayBook(book) {
     bookHandlebars = this.formatBookObject(book);
     const source = document.querySelector("#book-template").innerHTML;
@@ -49,6 +72,7 @@ const UI = {
     const container = document.querySelector(".container");
     const bookshelf = document.querySelector("#book-shelf");
     container.insertBefore(div, bookshelf);
+    setTimeout(() => document.querySelector(".alert").remove(), 300);
   },
   clearElement(element) {
     document.querySelector(element).remove();
