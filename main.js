@@ -5,6 +5,7 @@ const store = require("./js/store");
 document.querySelector("#book-form").addEventListener("submit", e => {
   e.preventDefault();
   UI.loadingMessage("Loading books", "info");
+  UI.clearBookResults();
   eventHandlers.bookForm();
 });
 
@@ -15,6 +16,6 @@ document.querySelector("#book-load").addEventListener("click", e => {
 });
 
 document.querySelector("#book-clear").addEventListener("click", e => {
-  store.clearSearchedBooks("#book-list");
-  UI.hideButtons();
+  store.clearSearchedBooks();
+  UI.resetPage();
 });

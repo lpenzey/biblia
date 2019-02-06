@@ -5,12 +5,18 @@ const UI = {
   searchFail(failure) {
     if (failure === "query") {
       this.showAlert("Please enter a search query", "danger");
+      this.resetPage();
+      this.clearElement(".alert");
     } else if (failure === "results") {
       this.showAlert("No books found", "danger");
+      this.resetPage();
+      this.clearElement(".alert");
+    } else if (failure === "resultsEnd") {
+      this.showAlert("No more books were found", "danger");
+      this.clearElement(".alert");
+    } else {
+      this.showAlert("An error occurred", "danger");
     }
-    this.clearElement(".alert");
-    this.clearField("#title");
-    this.hideButtons();
   },
   searchSuccess() {
     storedBooks = store.getBookResults();
@@ -55,6 +61,9 @@ const UI = {
   clearField(element) {
     document.querySelector(element).value = "";
   },
+  clearElement(element) {
+    document.querySelector(element).remove();
+  },
   showButtons() {
     document.querySelector("#book-load").style.visibility = "visible";
     document.querySelector("#book-clear").style.visibility = "visible";
@@ -80,8 +89,13 @@ const UI = {
     const bookshelf = document.querySelector("#book-shelf");
     container.insertBefore(div, bookshelf);
   },
-  clearElement(element) {
-    document.querySelector(element).remove();
+  resetPage() {
+    this.clearBookResults();
+    this.clearField("#title");
+    this.hideButtons();
+  },
+  clearBookResults() {
+    document.querySelector("#book-list").innerHTML = null;
   }
 };
 
