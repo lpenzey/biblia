@@ -8,21 +8,28 @@ const UI = {
     } else if (failure === "results") {
       this.showAlert("No books found", "danger");
     }
+    this.clearElement(".alert");
     this.clearField("#title");
     this.hideButtons();
   },
   searchSuccess() {
-    this.loadingMessage("Loading books", "info");
     storedBooks = store.getBookResults();
     booksToDisplay = storedBooks.slice(-10);
-    this.loopThroughBooks(booksToDisplay);
-    this.clearField("#title");
-    this.showButtons();
+    this.loopThroughBooks(booksToDisplay).then(response => {
+      if (response === "done") {
+        this.clearElement(".alert");
+        this.clearField("#title");
+        this.showButtons();
+      }
+    });
   },
   loopThroughBooks(books) {
-    for (const item of books) {
-      this.displayBook(item);
-    }
+    return new Promise(resolve => {
+      for (const item of books) {
+        this.displayBook(item);
+      }
+      resolve("done");
+    });
   },
   displayBook(book) {
     bookHandlebars = this.formatBookObject(book);
@@ -72,7 +79,6 @@ const UI = {
     const container = document.querySelector(".container");
     const bookshelf = document.querySelector("#book-shelf");
     container.insertBefore(div, bookshelf);
-    setTimeout(() => document.querySelector(".alert").remove(), 300);
   },
   clearElement(element) {
     document.querySelector(element).remove();

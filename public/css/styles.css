@@ -34,6 +34,14 @@ body {
   font-size: 100px;
 }
 
+#book-load {
+  visibility: hidden;
+}
+
+#book-clear {
+  visibility: hidden;
+}
+
 h2 {
   font-family: "Avenir";
   color: #ebdccb;
